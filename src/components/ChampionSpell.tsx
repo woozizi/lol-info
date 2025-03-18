@@ -7,7 +7,7 @@ const ChampionSpell = async ({ championId }: { championId: string }) => {
   const spells = await fetchChampionSpells(championId);
 
   return (
-    <div>
+    <>
       {spells.map((spell) => (
         <div
           key={spell.id}
@@ -28,7 +28,7 @@ const ChampionSpell = async ({ championId }: { championId: string }) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

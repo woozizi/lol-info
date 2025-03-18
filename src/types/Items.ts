@@ -22,5 +22,3 @@ export interface Gold {
   total: number;
   sell: number;
 }
-
-export type ItemWithId = Item & { id: string };
