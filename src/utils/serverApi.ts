@@ -1,4 +1,4 @@
-import { LANGUAGES, SERVER_URL, VERSION } from "@/app/constants/constants";
+import { LANGUAGES, SERVER_URL, VERSION } from "@/constants/constants";
 import { Champion, ChampionDetail } from "@/types/Champion";
 import { Item } from "@/types/Items";
 
@@ -38,7 +38,7 @@ export async function fetchChampionSpells(
   id: string,
 ): Promise<ChampionDetail["spells"]> {
   //suspense효과를 위해 지연
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 1500));
 
   const championDetail = await fetchChampionDetail(id);
   return championDetail.spells;

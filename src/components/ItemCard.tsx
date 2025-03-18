@@ -1,9 +1,17 @@
 import { Item } from "@/types/Items";
-import { SERVER_URL, VERSION } from "@/app/constants/constants";
+import { SERVER_URL, VERSION } from "@/constants/constants";
 import Image from "next/image";
 import React from "react";
 
-const ItemCard = ({ itemKey, item }: { itemKey: string; item: Item }) => {
+type ItemCardType = Pick<Item, "name" | "gold" | "plaintext">;
+
+const ItemCard = ({
+  itemKey,
+  item,
+}: {
+  itemKey: string;
+  item: ItemCardType;
+}) => {
   return (
     <div>
       <div className="flex h-auto flex-col items-center justify-center rounded-2xl border p-8">

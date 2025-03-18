@@ -1,11 +1,14 @@
-import { SERVER_URL } from "@/app/constants/constants";
+import { SERVER_URL } from "@/constants/constants";
 import { ChampionDetail } from "@/types/Champion";
 import { fetchChampionDetail } from "@/utils/serverApi";
 import Image from "next/image";
 import React from "react";
 
+type ChampionInfoType = Pick<ChampionDetail, "id" | "name" | "lore">;
+
 const ChampionInfo = async ({ championId }: { championId: string }) => {
-  const championDetail: ChampionDetail = await fetchChampionDetail(championId);
+  const championDetail: ChampionInfoType =
+    await fetchChampionDetail(championId);
   return (
     <>
       <h1 className="text-3xl font-bold">{championDetail.name}</h1>

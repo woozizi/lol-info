@@ -1,10 +1,14 @@
 export interface Champion {
+  version: string;
   id: string;
   key: string;
   name: string;
   title: string;
   blurb: string;
+  info: Record<string, number>;
   image: Image;
+  tages: string;
+  stars: Record<string, number>;
 }
 
 export interface ChampionDetail extends Champion {

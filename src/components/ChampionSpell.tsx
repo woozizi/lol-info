@@ -1,10 +1,11 @@
-import { SERVER_URL, VERSION } from "@/app/constants/constants";
+import { SERVER_URL, VERSION } from "@/constants/constants";
 import { fetchChampionSpells } from "@/utils/serverApi";
 import Image from "next/image";
 import React from "react";
 
 const ChampionSpell = async ({ championId }: { championId: string }) => {
   const spells = await fetchChampionSpells(championId);
+
   return (
     <div>
       {spells.map((spell) => (

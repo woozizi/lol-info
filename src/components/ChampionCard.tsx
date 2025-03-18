@@ -1,11 +1,13 @@
-import { SERVER_URL, VERSION } from "@/app/constants/constants";
+import { SERVER_URL, VERSION } from "@/constants/constants";
 import { Champion } from "@/types/Champion";
 
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ChampionCard = ({ champion }: { champion: Champion }) => {
+type ChampionCardType = Pick<Champion, "id" | "name" | "title" | "image">;
+
+const ChampionCard = ({ champion }: { champion: ChampionCardType }) => {
   return (
     <Link href={`/champions/${champion.id}`}>
       <div className="flex flex-col items-center rounded-2xl border p-8">
