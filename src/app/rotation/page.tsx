@@ -1,7 +1,7 @@
 "use client";
 
 import { Champion } from "@/types/Champion";
-import { useChampionRotation, useChampions } from "../hooks/queries";
+import { useChampionRotation, useChampions } from "../../hooks/queries";
 import ChampionCard from "@/components/ChampionCard";
 import DataList from "@/components/DataList";
 

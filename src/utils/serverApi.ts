@@ -11,8 +11,10 @@ export async function fetchChampionList(): Promise<Champion[]> {
     `${SERVER_URL}/${VERSION}/data/${LANGUAGES}/champion.json`,
     { next: { revalidate: 86400 } },
   );
+
   const { data } = await res.json();
   const champions: Champion[] = Object.values(data);
+
   return champions;
 }
 
@@ -20,7 +22,9 @@ export async function fetchChampionList(): Promise<Champion[]> {
 export async function fetchChampionDetail(
   name: string,
 ): Promise<ChampionDetail> {
-  // console.log("API 호출 시간:", new Date().toISOString());
+  //suspense효과를 위해 지연
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
   const res = await fetch(
     `${SERVER_URL}/${VERSION}/data/${LANGUAGES}/champion/${name}.json`,
     { cache: "no-store" },
@@ -28,12 +32,23 @@ export async function fetchChampionDetail(
 
   const { data } = await res.json();
   const championDetail: ChampionDetail = data[name];
+
   return championDetail;
+}
+
+//챔피언 스펠 가져오기
+export async function fetchChampionSpells(
+  id: string,
+): Promise<ChampionDetail["spells"]> {
+  //suspense효과를 위해 지연
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  const championDetail = await fetchChampionDetail(id);
+  return championDetail.spells;
 }
 
 //아이템 리스트 가져오기
 export async function fetchItemList(): Promise<Record<string, Item>> {
-  // console.log("서버컴포넌트에서");
   const res = await fetch(
     `${SERVER_URL}/${VERSION}/data/${LANGUAGES}/item.json`,
     { cache: "force-cache" },
