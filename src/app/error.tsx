@@ -14,7 +14,6 @@ export default function Error({
 
   return (
     <div>
-      <h2>에러가 발생했습니다</h2>
       <h2>{error.message}</h2>
       <button
         onClick={() =>

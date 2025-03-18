@@ -1,5 +1,4 @@
 export interface Champion {
-  version: string;
   id: string;
   key: string;
   name: string;
@@ -7,7 +6,7 @@ export interface Champion {
   blurb: string;
   info: Record<string, number>;
   image: Image;
-  tages: string;
+  tages: string[];
   stars: Record<string, number>;
 }
 
