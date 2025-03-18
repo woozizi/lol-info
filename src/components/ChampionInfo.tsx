@@ -1,5 +1,6 @@
+import { SERVER_URL } from "@/app/constants/constants";
 import { ChampionDetail } from "@/types/Champion";
-import { fetchChampionDetail, SERVER_URL } from "@/utils/serverApi";
+import { fetchChampionDetail } from "@/utils/serverApi";
 import Image from "next/image";
 import React from "react";
 

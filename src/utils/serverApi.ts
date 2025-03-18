@@ -1,9 +1,6 @@
+import { LANGUAGES, SERVER_URL, VERSION } from "@/app/constants/constants";
 import { Champion, ChampionDetail } from "@/types/Champion";
 import { Item } from "@/types/Items";
-
-export const SERVER_URL = "https://ddragon.leagueoflegends.com/cdn";
-export const VERSION = "15.5.1";
-export const LANGUAGES = "ko_KR";
 
 //챔피언 리스트 정보 가져오기
 export async function fetchChampionList(): Promise<Champion[]> {

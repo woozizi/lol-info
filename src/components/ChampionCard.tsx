@@ -1,5 +1,6 @@
+import { SERVER_URL, VERSION } from "@/app/constants/constants";
 import { Champion } from "@/types/Champion";
-import { SERVER_URL, VERSION } from "@/utils/serverApi";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

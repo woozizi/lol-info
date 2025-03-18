@@ -1,4 +1,5 @@
-import { fetchChampionSpells, SERVER_URL, VERSION } from "@/utils/serverApi";
+import { SERVER_URL, VERSION } from "@/app/constants/constants";
+import { fetchChampionSpells } from "@/utils/serverApi";
 import Image from "next/image";
 import React from "react";
 

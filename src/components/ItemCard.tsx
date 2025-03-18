@@ -1,5 +1,5 @@
 import { Item } from "@/types/Items";
-import { SERVER_URL, VERSION } from "@/utils/serverApi";
+import { SERVER_URL, VERSION } from "@/app/constants/constants";
 import Image from "next/image";
 import React from "react";
 
