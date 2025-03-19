@@ -25,6 +25,6 @@ export async function GET() {
 
     return NextResponse.json(data);
   } catch (err) {
-    retunr NextResponse.json(err)
+    return NextResponse.json(err);
   }
 }
