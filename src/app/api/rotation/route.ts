@@ -24,7 +24,7 @@ export async function GET() {
     const data: ChampionRotation = await res.json();
 
     return NextResponse.json(data);
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    retunr NextResponse.json(err)
   }
 }
