@@ -23,7 +23,7 @@ export default function RotationPage() {
   if (championsError) return <div>{championsError.message}</div>;
 
   const rotationChampions = champions.filter((c: Champion) =>
-    rotationData.freeChampionIds.includes(Number(c.key)),
+    rotationData?.freeChampionIds?.includes(Number(c.key)),
   );
 
   return (
