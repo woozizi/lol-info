@@ -41,6 +41,7 @@ export async function fetchChampionSpells(
   await new Promise((resolve) => setTimeout(resolve, 1500));
 
   const championDetail = await fetchChampionDetail(id);
+
   return championDetail.spells;
 }
 

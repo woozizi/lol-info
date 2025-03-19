@@ -6,8 +6,8 @@ type ChampionRotation = {
 };
 
 export async function GET() {
-  const apiKey = process.env.NEXT_RIOT_API_KEY;
-  const serverKey = process.env.API_SECRET_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_RIOT_API_KEY;
+  const serverKey = process.env.NEXT_PUBLIC_API_SECRET_KEY;
 
   if (!apiKey || !serverKey) {
     throw new Error("api호출 실패");
